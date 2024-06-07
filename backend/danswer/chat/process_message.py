@@ -235,7 +235,6 @@ def stream_chat_message_objects(
             raise RuntimeError(
                 "Must specify a set of documents for chat or specify search options"
             )
-
         try:
             llm = get_llm_for_persona(
                 persona, new_msg_req.llm_override or chat_session.llm_override
