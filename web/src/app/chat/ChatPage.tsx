@@ -413,7 +413,6 @@ export function ChatPage({
     useState<boolean>(false);
 
   // auto scroll as message comes out
-  const extraDivRef = useRef<HTMLDivElement>(null);
   const scrollableDivRef = useRef<HTMLDivElement>(null);
   const lastMessageRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLDivElement>(null);
@@ -470,7 +469,6 @@ export function ChatPage({
     inputRef,
     endDivRef,
     textAreaRef,
-    extraDivRef,
   });
 
   // used for resizing of the document sidebar
@@ -1281,8 +1279,8 @@ export function ChatPage({
                             );
                           }
                         })}
-
-                        <div ref={extraDivRef} className="h-[150px]" />
+                        z
+                        <div ref={endDivRef} className="min-h-[100px]" />1 z
                         {isStreaming &&
                           messageHistory.length > 0 &&
                           messageHistory[messageHistory.length - 1].type ===
@@ -1308,7 +1306,6 @@ export function ChatPage({
                               />
                             </div>
                           )}
-
                         {livePersona &&
                           livePersona.starter_messages &&
                           livePersona.starter_messages.length > 0 &&
@@ -1347,8 +1344,6 @@ export function ChatPage({
                               )}
                             </div>
                           )}
-
-                        <div ref={endDivRef} />
                       </div>
                     </div>
 
